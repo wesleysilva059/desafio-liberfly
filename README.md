@@ -28,11 +28,6 @@ git clone git@github.com:wesleysilva059/desafio-liberfly.git
 cd desafio-liberfly
 ```
 
-#### Altere para a branch master.
-```shell
-git checkout master
-```
-
 ## Rodando o projeto localmente
 #### Instale as dependências.
 ```shell
