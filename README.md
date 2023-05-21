@@ -1,66 +1,72 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Desafio Liberfly
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## **Informações sobre o ambiente**
 
-## About Laravel
+- PHP v8.0
+- Laravel v9.19
+- Banco de dados: MySql 8.0
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Descrição
+Desafio tecnico apresentado pela Liberfly para o processo seletivo de uma vaga de Desenvolvedor Backend
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+A finalidade do teste é de apresentar os conhecimentos no desenvolvimento de uma Api Restfull, apresentando conceitos como response em Json, FormRequest, DesignPatterns (Services/Repositories), Testes de Feature.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Para instalar e testar o projeto siga os passos a seguir:
 
-## Learning Laravel
+```
+## Instalação do projeto
+O projeto deverá ser rodado de forma direta (necessário o PHP8, Composer2 e MySql instalado na maquina).
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+#### Clonando o projeto.
+```shell
+git clone [git@github.com:wesleysilva059/desafio-liberfly.git]
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+#### Acesse a pasta do projeto.
+```shell
+cd desafio-liberfly
+```
 
-## Laravel Sponsors
+#### Altere para a branch master.
+```shell
+git checkout master
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Rodando o projeto localmente
+#### Instale as dependências.
+```shell
+composer install
+```
 
-### Premium Partners
+#### Criar arquivo de configuração.
+Execute o comando abaixo para criar o seu arquivo `.env` a partir do `.env.desafio`.
+```shell
+cp .env.desafio .env
+```
+Após a criação do seu `.env` valide as suas configurações de banco de dados para prosseguirmos ao próximo passo.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
 
-## Contributing
+#### Gere a chave de segurança do ‘software’.
+```shell
+php artisan key:generate
+```                                  
+#### Gere a chave do JWT.
+```shell
+php artisan jwt:secret
+``` 
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+#### Intale as tabelas e informações inicias, utilizando **migration** e **seeds**
+```shell
+php artisan migrate --seed
+``` 
 
-## Code of Conduct
+#### Criar a documentação do Swagger.
+```shell
+php artisan l5-swagger:generate
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+#### Inicializando o software.
+```shell
+php artisan serve
+```
