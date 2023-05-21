@@ -78,7 +78,26 @@ http://127.0.0.1:8000/api/documentation
 
 #### Para a autenticação no sistema, use o usuario criado na seeder
 ```shell
-	- email admin@admin.com
-	- senha password
-    - usar a rota /api/login e obter o bearertoken necessario a execução das rotas.
+email admin@admin.com
+senha password
+usar a rota /api/login e obter o bearertoken necessario a execução das rotas.
+```
+
+#### Para execução dos testes unitários, rode o seguinte comando.
+```shell
+php artisan test
+```
+
+#### Lista de Rotas
+```shell
+| Method | URI                                          
+|--------|----------------------------------------------
+|POST    | api/login                                   
+|POST    | api/logout                
+|POST    | api/me                                
+|POST    | api/refresh                                             
+|POST    | api/products/store                
+|GET     | api/products/                             
+|GET     | api/products/show/{id}                                
+|DELETE  | api/transactions/destroy/{id}                                
 ```
