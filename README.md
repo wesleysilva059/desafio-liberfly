@@ -16,7 +16,7 @@ Para instalar e testar o projeto siga os passos a seguir:
 ```
 ## Instalação do projeto
 O projeto deverá ser rodado de forma direta (necessário o PHP8, Composer2 e MySql instalado na maquina).
-
+```
 
 #### Clonando o projeto.
 ```shell
@@ -69,4 +69,16 @@ php artisan l5-swagger:generate
 #### Inicializando o software.
 ```shell
 php artisan serve
+```
+
+#### Para acessar a documentação Swagger, abra no navegador o seguinte link.
+```shell
+http://127.0.0.1:8000/api/documentation
+```
+
+#### Para a autenticação no sistema, use o usuario criado na seeder
+```shell
+	- email admin@admin.com
+	- senha password
+    - usar a rota /api/login e obter o bearertoken necessario a execução das rotas.
 ```
