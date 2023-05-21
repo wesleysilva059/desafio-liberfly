@@ -78,7 +78,7 @@ class ProductController extends Controller
     {
         try {
             $product = $this->productService->store($request->all());
-            dd($product);
+
             return response(new ProductResource($product), Response::HTTP_OK);
         } catch (Exception $e) {
             return response()->json(['message' => $e->getMessage()], 400);
