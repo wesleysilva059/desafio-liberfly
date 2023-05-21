@@ -20,7 +20,7 @@ O projeto deverá ser rodado de forma direta (necessário o PHP8, Composer2 e My
 
 #### Clonando o projeto.
 ```shell
-git clone [git@github.com:wesleysilva059/desafio-liberfly.git]
+git clone git@github.com:wesleysilva059/desafio-liberfly.git
 ```
 
 #### Acesse a pasta do projeto.
